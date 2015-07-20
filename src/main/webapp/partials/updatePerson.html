@@ -1,0 +1,38 @@
+	    <div class="container" ng-controller="AppController">
+	      <div class="page-header">
+	        <h1>Secret Friend - Update Person</h1>
+	      </div>
+
+	      <form name="secretFriendFormUpdate" class="form-horizontal" role="form" ng-submit="updatePerson(personToUpdate);">
+
+	        <div class="input">
+	          <div class="col-xs-4">
+	            <input type="text" name="userName" class="form-control" ng-model="personToUpdate.name" placeholder="Enter name ..." required />
+	          </div>
+	          <div class="col-xs-1"></div>
+	          <div class="col-xs-4">
+		          <input type="email" name="userEmail" class="form-control" ng-model="personToUpdate.email" placeholder="Enter email ..." required />
+		      </div>
+		      <div class="col-xs-3"> 
+		          <span class="input-group-btn">
+		            <button class="btn btn-default" type="submit" ng-disabled="!secretFriendFormUpdate.$valid" title="Update">
+		              <span class="glyphicon glyphicon-pencil"></span>
+		            </button>
+		          </span>
+		      </div>
+	        </div>
+
+	      </form>
+
+	      <br /><br /><br /><br />
+	      
+	      <div>
+	          <div class="col-xs-5"></div>
+		      <div class="col-xs-2">
+		        <button class="btn btn-primary center-block" ng-click="backToHome()">Back to Home</button>
+		      </div>
+			  <div class="col-xs-5"></div>
+	      </div>
+
+	    </div>
+	      

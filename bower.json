@@ -1,0 +1,13 @@
+{
+	"name": "secretFriend",
+	"version": "1.0.0",
+	"dependencies": {
+		"angular": "~1.4.3",
+		"angular-bootstrap": "~0.13.0",
+		"angular-resource": "~1.4.3",
+		"angular-route": "~1.4.3",
+		"angular-spring-data-rest": "~0.4.2",
+		"bootstrap-css-only": "~3.3.4",
+		"lodash": "~3.10.0"
+	}
+}

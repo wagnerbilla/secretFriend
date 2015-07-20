@@ -1,0 +1,83 @@
+	    <div class="container" ng-controller="AppController">
+	      <div class="page-header">
+	        <h1>Secret Friend</h1>
+	      </div>
+	      <div class="alert alert-info" role="alert" ng-hide="persons && persons.length > 0">
+	        There are no persons in the list yet.
+	      </div>
+	
+	      <form name="secretFriendForm" class="form-horizontal" role="form" ng-submit="addPerson(newPerson.name, newPerson.email)">
+	
+	        <div ng-hide="!persons || persons.length == 0">
+	          <div class="col-xs-5">
+	            <label><h3>Name</h3></label>
+	          </div>
+	          <div class="col-xs-4">
+	            <label><h3>&nbsp;&nbsp;E-mail</h3></label>
+	          </div>
+	          <div class="col-xs-3"></div>
+	        </div>
+	
+	        <div class="form-group" ng-repeat="person in persons">
+	          <div class="checkbox col-xs-5">
+	            <label>
+	              <a href="" ng-click="updatePersonPage(person)">{{person.name}}</a>
+	            </label>
+	          </div>
+	          <div class="checkbox col-xs-4">
+	            <label>
+	              <a href="" ng-click="updatePersonPage(person)">{{person.email}}</a>
+	            </label>
+	          </div>
+	          <div class="col-xs-3">
+	            <button class="pull-right btn btn-danger" type="button" title="Delete"
+	              ng-click="openDeleteConfirmationDialog(person)">
+	              <span class="glyphicon glyphicon-trash"></span>
+	            </button>
+	          </div>
+	        </div>
+	        <hr />
+	
+	      </form>
+	
+	      <form name="searchForm" class="form-horizontal" role="form" ng-submit="searchResult(searchText)">
+	
+	        <div class="input">
+	          <div class="col-xs-8">
+	            <input type="text" name="searchText" class="form-control" ng-model="searchText" placeholder="Enter text to search ..." required />
+	          </div>
+		      <div class="col-xs-2"> 
+		          <span class="input-group-btn">
+		            <button class="btn btn-default" type="submit" title="Search">
+		              <span class="glyphicon glyphicon-search"></span>
+		            </button>
+		          </span>
+		      </div>
+
+	      </form>
+	
+		  <form name="addNewPersonForm" class="form-horizontal" role="form" ng-submit="addNewPersonPage()">
+
+			  <div class="col-xs-2">
+			   	<button id="addPersonButton" name="addPersonButton" class="btn btn-primary center-block">Add New Person</button> 
+			  </div>
+		    </div>
+		    
+		  </form>
+
+			<br /><br /><br /><br />
+
+	        <div>
+	          <div class="col-xs-3"></div>
+		      <div class="col-xs-2">
+		        <button id="doShuffle" name="doShuffle" class="btn btn-primary center-block" ng-click="doShuffle()" ng-disabled="isShuffleDisabled || persons.length<2">Do Shuffle</button>
+		      </div>
+			  <div class="col-xs-2"></div>
+			  <div class="col-xs-2">
+			    <button id="sendEmails" name="sendEmails" class="btn btn-primary center-block" ng-click="openSendEmailConfirmationDialog()" ng-disabled="!isShuffleDisabled">Send e-mails</button>
+			  </div>
+			  <div class="col-xs-3"></div>
+		    </div>
+		 </div>
+
+		    

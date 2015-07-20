@@ -1,0 +1,38 @@
+	    <div class="container" ng-controller="AppController">
+	      <div class="page-header">
+	        <h1>Secret Friend - Add New Person</h1>
+	      </div>
+
+	      <form name="secretFriendForm" class="form-horizontal" role="form" ng-submit="addPerson(newPerson.name, newPerson.email);">
+
+	        <div class="input">
+	          <div class="col-xs-4">
+	            <input type="text" name="userName" class="form-control" ng-model="newPerson.name" placeholder="Enter name ..." required />
+	          </div>
+	          <div class="col-xs-1"></div>
+	          <div class="col-xs-4">
+		          <input type="email" name="userEmail" class="form-control" ng-model="newPerson.email" placeholder="Enter email ..." required />
+		      </div>
+		      <div class="col-xs-3"> 
+		          <span class="input-group-btn">
+		            <button class="btn btn-default" type="submit" ng-disabled="!secretFriendForm.$valid" title="Add">
+		              <span class="glyphicon glyphicon-plus"></span>
+		            </button>
+		          </span>
+		      </div>
+	        </div>
+
+	      </form>
+	      
+	      <br /><br /><br /><br />
+	      
+	      <div>
+	          <div class="col-xs-5"></div>
+		      <div class="col-xs-2">
+		        <button class="btn btn-primary center-block" ng-click="backToHome()">Back to Home</button>
+		      </div>
+			  <div class="col-xs-5"></div>
+	      </div>
+
+	    </div>
+	      

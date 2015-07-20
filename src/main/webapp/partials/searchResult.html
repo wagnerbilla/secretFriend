@@ -1,0 +1,40 @@
+	    <div class="container" ng-controller="AppController">
+	      <div class="page-header">
+	        <h1>Secret Friend - Search Result</h1>
+	      </div>
+
+	        <div>
+	          <div class="col-xs-6">
+	            <label><h3>Name</h3></label>
+	          </div>
+	          <div class="col-xs-6">
+	            <label><h3>&nbsp;&nbsp;E-mail</h3></label>
+	          </div>
+	        </div>
+	
+	        <div class="form-group" ng-repeat="person in persons">
+	        	<div ng-show="person.name.toLowerCase().indexOf(searchText.toLowerCase()) >= 0 || person.email.toLowerCase().indexOf(searchText.toLowerCase()) >= 0">
+		          <div class="col-xs-6">
+		            <label>
+		              {{person.name}}
+		            </label>
+		          </div>
+		          <div class="col-xs-6">
+		            <label>
+		              {{person.email}}
+		            </label>
+		          </div>
+	          	</div>
+	        </div>
+	        
+		</div>
+
+        <br /><br />
+
+        <div>
+          <div class="col-xs-5"></div>
+	      <div class="col-xs-2">
+	        <button class="btn btn-primary center-block" ng-click="backToHome()">Back to Home</button>
+	      </div>
+		  <div class="col-xs-5"></div>
+	    </div>
